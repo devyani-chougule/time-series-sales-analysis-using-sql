@@ -41,7 +41,4 @@ SELECT
   -- Year-over-year difference
   current_sales - LAG(current_sales) OVER (PARTITION BY product_name ORDER BY order_year) AS difference_in_previousyear,
 
-  -- Categorize YoY change
-  CASE
-    WHEN current_sales - LAG(current_sales) OVER (PARTITION BY product_name ORDER BY order_year) > 0 THEN 'Increase'
-    WHEN current_sales - LAG_
+
